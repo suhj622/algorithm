@@ -1,4 +1,4 @@
-package com.suhj.jike.weekone;
+package com.suhj.jike.week1;
 /**
  * 
  * @author Haojie
