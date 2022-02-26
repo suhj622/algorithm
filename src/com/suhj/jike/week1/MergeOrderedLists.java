@@ -12,7 +12,7 @@ class ListNode {
       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
 
-public class Solution {
+public class MergeOrderedLists {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
         //边界问题：两个链表至少有一个为空链表
