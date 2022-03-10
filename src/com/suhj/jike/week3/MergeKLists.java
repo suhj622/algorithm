@@ -1,4 +1,4 @@
-package com.suhj.week3;
+package com.suhj.jike.week3;
 
 import java.util.ArrayList;
 import java.util.List;

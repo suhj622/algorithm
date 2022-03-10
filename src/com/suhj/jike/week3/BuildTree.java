@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.suhj.week3;
+package com.suhj.jike.week3;
 
 /**
  * @author Haojie
