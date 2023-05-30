@@ -17,8 +17,8 @@ i = 7  [2, 5, 7, 18] [2, 3, 7, 18]
  第 i 位的最优解为可以排的前i-1个子序列中的最长序列长度 + 1
  添加一个计数，cnt[i]来记录递增子序列的个数
  */
-public class FindNumberOfLIS {
-	   public int findNumberOfLIS(int[] nums) {
+public  class FindNumberOfLIS {
+	public static int findNumberOfLIS(int[] nums) {
 
 	        int length = nums.length;
 	        int[] f = new int[length];
@@ -56,4 +56,9 @@ public class FindNumberOfLIS {
 	        }        
 	        return maxCnt;
 	    }
+		public static void main(String[] args) {
+			int[] nums = { 2, 3, 0, 4, 1, 6};
+			int max = findNumberOfLIS(nums);
+			System.out.println(max);
+		}
 }
