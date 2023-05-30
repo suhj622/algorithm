@@ -1,6 +1,6 @@
 package com.suhj.jike.week1;
 /**
- * ºÏ²¢Á½¸öÓĞĞòÁ´±í
+ * åˆå¹¶ä¸¤ä¸ªæœ‰åºé“¾è¡¨
  * @author Haojie
  *
  */
@@ -15,7 +15,7 @@ class ListNode {
 public class MergeOrderedLists {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
-        //±ß½çÎÊÌâ£ºÁ½¸öÁ´±íÖÁÉÙÓĞÒ»¸öÎª¿ÕÁ´±í
+        //è¾¹ç•Œé—®é¢˜ï¼šä¸¤ä¸ªé“¾è¡¨è‡³å°‘æœ‰ä¸€ä¸ªä¸ºç©ºé“¾è¡¨
         if( list1== null && list2== null){
             return null;
         }else if(list1 == null){
@@ -28,7 +28,7 @@ public class MergeOrderedLists {
         ListNode old2 = list2;
         ListNode newHead;
 
-        //È·¶¨Í·½áµã
+        //ç¡®å®šå¤´ç»“ç‚¹
         if(old1.val <= old2.val){
             newHead = old1;
             old1 = old1.next;
@@ -36,11 +36,11 @@ public class MergeOrderedLists {
             newHead = old2;
             old2 = old2.next;
         }
-        //¿ªÊ¼½øĞĞÆ´½Ó£¬Ë­Ğ¡Æ´½ÓË­
-        //ÀÏÁ´±íÒÆ¶¯µ½ÏÂÒ»¸ö½Ó¿Ú£¬ĞÂÁ´±íÁ¬½Ó½Úµãºó£¬ÒÆ¶¯ÖÁĞÂµÄ½Ó¿Ú
+        //å¼€å§‹è¿›è¡Œæ‹¼æ¥ï¼Œè°å°æ‹¼æ¥è°
+        //è€é“¾è¡¨ç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªæ¥å£ï¼Œæ–°é“¾è¡¨è¿æ¥èŠ‚ç‚¹åï¼Œç§»åŠ¨è‡³æ–°çš„æ¥å£
         ListNode cur = newHead;
         while(old1 != null || old2 != null ){
-            //ÄÜÔÚÁ´±í1È¥½ÚµãµÄÌõ¼ş
+            //èƒ½åœ¨é“¾è¡¨1å»èŠ‚ç‚¹çš„æ¡ä»¶
             if( (old2 == null ) || ( old1 != null  &&  old2 != null &&  old1.val <= old2.val) ){
                 cur.next = old1;
                 old1 = old1.next;
@@ -51,7 +51,7 @@ public class MergeOrderedLists {
                 cur = cur.next;
             }
         }
-        //·µ»ØµÄÍ·½áµã
+        //è¿”å›çš„å¤´ç»“ç‚¹
         return newHead;
 
     }

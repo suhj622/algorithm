@@ -2,7 +2,7 @@ package com.suhj.jike.week1;
 /**
  * 
  * @author Haojie
- * Éè¼ÆÑ­»·Ë«¶Ë¶ÓÁĞ
+ * è®¾è®¡å¾ªç¯åŒç«¯é˜Ÿåˆ—
  */
 public class MyCircularDeque {
 	
@@ -10,8 +10,8 @@ public class MyCircularDeque {
     int head;
     int tail;
 
-    //³õÊ¼»¯ÈİÁ¿ÎªkµÄÊı×é
-    //µ±Ç°Êı×éÖĞÎŞÔªËØ£¬head¡¢tailÄ¬ÈÏÎª-1
+    //åˆå§‹åŒ–å®¹é‡ä¸ºkçš„æ•°ç»„
+    //å½“å‰æ•°ç»„ä¸­æ— å…ƒç´ ï¼Œheadã€tailé»˜è®¤ä¸º-1
     public MyCircularDeque(int k) {
         this.deque = new int[k];
         this.head=-1;
@@ -19,7 +19,7 @@ public class MyCircularDeque {
     }
     
     public boolean insertFront(int value) {
-        //Îª¿ÕµÄÇé¿ö
+        //ä¸ºç©ºçš„æƒ…å†µ
         if(this.isEmpty()){
             this.deque[0]=value;
             this.head=0;
@@ -27,15 +27,15 @@ public class MyCircularDeque {
             return true;
         }
 
-        //²»Îª¿ÕµÄÇé¿ö
-        if(this.isFull()){//ÂúÁË
+        //ä¸ä¸ºç©ºçš„æƒ…å†µ
+        if(this.isFull()){//æ»¡äº†
             return false;
-        }else{//Î´Âú
-            //headÔÚ0µÄÎ»ÖÃ
+        }else{//æœªæ»¡
+            //headåœ¨0çš„ä½ç½®
             if(head==0){
                 this.deque[this.deque.length-1]=value;
                 this.head=this.deque.length-1;
-            }else{//headÔÚ·Ç0µÄÎ»ÖÃ
+            }else{//headåœ¨é0çš„ä½ç½®
                 this.deque[this.head-1]=value;
                 this.head=this.head-1;
             }            
@@ -44,7 +44,7 @@ public class MyCircularDeque {
     }
     
     public boolean insertLast(int value) {
-        //Îª¿ÕµÄÇé¿ö
+        //ä¸ºç©ºçš„æƒ…å†µ
         if(this.isEmpty()){
             this.deque[0]=value;
             this.head=0;
@@ -52,15 +52,15 @@ public class MyCircularDeque {
             return true;
         }
 
-       //²»Îª¿ÕµÄÇé¿ö
-        if(this.isFull()){//ÂúÁË
+       //ä¸ä¸ºç©ºçš„æƒ…å†µ
+        if(this.isFull()){//æ»¡äº†
             return false;
-        }else{//Î´Âú
-            //tailÔÚlength-1µÄÎ»ÖÃ
+        }else{//æœªæ»¡
+            //tailåœ¨length-1çš„ä½ç½®
             if(this.tail==this.deque.length-1){
                 this.deque[0]=value;
                 this.tail=0;
-            }else{//tailÔÚ·Çlength-1µÄÎ»ÖÃ
+            }else{//tailåœ¨élength-1çš„ä½ç½®
                 this.deque[this.tail+1]=value;
                 this.tail=this.tail+1;
             }            
@@ -70,28 +70,28 @@ public class MyCircularDeque {
     
     public boolean deleteFront() {
 
-        //¿ÕµÄÇé¿ö
+        //ç©ºçš„æƒ…å†µ
         if(this.isEmpty()){
             return false;
         }
 
-        //Ö»ÓĞÒ»¸ö½ÚµãµÄÇé¿ö
+        //åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹çš„æƒ…å†µ
         if(this.head==this.tail){
             this.head=-1;
             this.tail=-1;
         }
 
-        //head½ÚµãÔÚtail½Úµã×ó±ßµÄÇé¿ö
+        //headèŠ‚ç‚¹åœ¨tailèŠ‚ç‚¹å·¦è¾¹çš„æƒ…å†µ
         if(this.head<this.tail){
             this.head+=1;
         }
 
-        //head½ÚµãÔÚtail½ÚµãÓÒ±ßµÄÇé¿ö
+        //headèŠ‚ç‚¹åœ¨tailèŠ‚ç‚¹å³è¾¹çš„æƒ…å†µ
         if(this.head>this.tail){
-            //head½ÚµãÔÚlength-1Î»ÖÃ
+            //headèŠ‚ç‚¹åœ¨length-1ä½ç½®
             if(this.head==this.deque.length-1){
                 this.head=0;
-            }else{//head½ÚµãÔÚ·Çlength-1Î»ÖÃ
+            }else{//headèŠ‚ç‚¹åœ¨élength-1ä½ç½®
                 this.head+=1;
             }
         }
@@ -102,28 +102,28 @@ public class MyCircularDeque {
     
     public boolean deleteLast() {
 
-        //¿ÕµÄÇé¿ö
+        //ç©ºçš„æƒ…å†µ
         if(this.isEmpty()){
             return false;
         }
 
-        //Ö»ÓĞÒ»¸ö½ÚµãµÄÇé¿ö
+        //åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹çš„æƒ…å†µ
         if(this.head==this.tail){
             this.head=-1;
             this.tail=-1;
         }
 
-        //tail½ÚµãÔÚhead½ÚµãÓÒ±ßµÄÇé¿ö
+        //tailèŠ‚ç‚¹åœ¨headèŠ‚ç‚¹å³è¾¹çš„æƒ…å†µ
         if(this.head<this.tail){
             this.tail-=1;
         }
 
-        //tail½ÚµãÔÚhead½Úµã×ó±ßµÄÇé¿ö
+        //tailèŠ‚ç‚¹åœ¨headèŠ‚ç‚¹å·¦è¾¹çš„æƒ…å†µ
         if(this.head>this.tail){
-            //tail½ÚµãÔÚ0Î»ÖÃ
+            //tailèŠ‚ç‚¹åœ¨0ä½ç½®
             if(this.tail==0){
                 this.tail=this.deque.length-1;
-            }else{//tail½ÚµãÔÚ·Ç0Î»ÖÃ
+            }else{//tailèŠ‚ç‚¹åœ¨é0ä½ç½®
                 this.tail-=1;
             }
         }        
@@ -132,24 +132,24 @@ public class MyCircularDeque {
     
     public int getFront() {
 
-        //¿ÕµÄÇé¿ö
+        //ç©ºçš„æƒ…å†µ
         if(this.isEmpty()){
             return -1;
-        }else{//·Ç¿ÕµÄÇé¿ö
+        }else{//éç©ºçš„æƒ…å†µ
             return this.deque[this.head];
         }        
     }
     
     public int getRear() {
-        //¿ÕµÄÇé¿ö
+        //ç©ºçš„æƒ…å†µ
         if(this.isEmpty()){
             return -1;
-        }else{//·Ç¿ÕµÄÇé¿ö
+        }else{//éç©ºçš„æƒ…å†µ
             return this.deque[this.tail];
         }
     }
     
-    //Ö»ÓĞÒ»¸ö½ÚµãÊ±£¬head¡¢tailÍ¬Ê±Ö¸Ïò¸Ã½Úµã
+    //åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹æ—¶ï¼Œheadã€tailåŒæ—¶æŒ‡å‘è¯¥èŠ‚ç‚¹
     public boolean isEmpty() {
         if(this.head==-1 && this.tail==-1){
             return true;
@@ -157,8 +157,8 @@ public class MyCircularDeque {
         return false;
     }
     
-    //head½Úµã×ó±ß¡¢tail½ÚµãÔÚÓÒ±ßµÄÇé¿ö
-    //head½ÚµãÔÚÓÒ±ß¡¢tail½ÚµãÔÚ×ó±ßµÄÇé¿ö
+    //headèŠ‚ç‚¹å·¦è¾¹ã€tailèŠ‚ç‚¹åœ¨å³è¾¹çš„æƒ…å†µ
+    //headèŠ‚ç‚¹åœ¨å³è¾¹ã€tailèŠ‚ç‚¹åœ¨å·¦è¾¹çš„æƒ…å†µ
     public boolean isFull() {
         if((this.head==0 && this.tail==(this.deque.length-1)) || ((this.tail+1)==this.head) ){
             return true;
