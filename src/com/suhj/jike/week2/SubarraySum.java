@@ -7,29 +7,29 @@ import java.util.HashMap;
 
 /**
  * @author Haojie
- * 560. ºÍÎª K µÄ×ÓÊı×é
+ * 560. å’Œä¸º K çš„å­æ•°ç»„
  */
 //1,1,1
-//µü´ú´ÎÊı	       Ç°×ººÍ      ³öÏÖ´ÎÊı	   target=2£¨±íÊ¾ĞèÒªÕÒµ½target-Ç°×ººÍ³öÏÖµÄ´ÎÊı£©
+//è¿­ä»£æ¬¡æ•°	       å‰ç¼€å’Œ      å‡ºç°æ¬¡æ•°	   target=2ï¼ˆè¡¨ç¤ºéœ€è¦æ‰¾åˆ°target-å‰ç¼€å’Œå‡ºç°çš„æ¬¡æ•°ï¼‰
 //  0			0		   1		  0
 //  1			1		   1		  0
 //  2			2		   1          1
 //  3           3		   1          1
 public class SubarraySum {
     public int subarraySum(int[] nums, int k) {
-        //1. ±éÀúÊı×é£¬¼ÆËãÇ°×ººÍ£¬ÓÃHashMap[preSum, cnt]±£´æ
+        //1. éå†æ•°ç»„ï¼Œè®¡ç®—å‰ç¼€å’Œï¼Œç”¨HashMap[preSum, cnt]ä¿å­˜
         HashMap<Integer, Integer> preSumMap = new HashMap();
         int preSum = 0;
         int ans = 0;
-        //²åÈëÄ¬ÈÏÖµ<key, value>=<0, 1>
+        //æ’å…¥é»˜è®¤å€¼<key, value>=<0, 1>
         preSumMap.put(0, 1);
         for(int i = 0; i < nums.length; i++){
             preSum += nums[i];
-            //2. ¶ÔÓÚµ±Ç°Ç°×ººÍpre[i]£¬ÏÈÔÚHashMap²éÕÒkey=k-preSumµÄvalue£¬½øĞĞ´ÎÊıµÄÀÛ¼Ó
+            //2. å¯¹äºå½“å‰å‰ç¼€å’Œpre[i]ï¼Œå…ˆåœ¨HashMapæŸ¥æ‰¾key=k-preSumçš„valueï¼Œè¿›è¡Œæ¬¡æ•°çš„ç´¯åŠ 
             if(preSumMap.containsKey(preSum - k)){
                 ans += preSumMap.get(preSum - k);
             }
-            //3. ½«µ±Ç°[preSum, cnt]¸üĞÂ½øHashMap
+            //3. å°†å½“å‰[preSum, cnt]æ›´æ–°è¿›HashMap
             if(preSumMap.containsKey(preSum)){
                 preSumMap.put(preSum, preSumMap.get(preSum) + 1);
             }else{

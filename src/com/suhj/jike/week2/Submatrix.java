@@ -7,24 +7,24 @@ import java.util.HashMap;
 
 /**
  * @author Haojie
- * 1074. ÔªËØºÍÎªÄ¿±êÖµµÄ×Ó¾ØÕóÊıÁ¿
+ * 1074. å…ƒç´ å’Œä¸ºç›®æ ‡å€¼çš„å­çŸ©é˜µæ•°é‡
  */
 public class Submatrix {
     /**the num submatrix of the sumtarget */
     public int numSubmatrixSumTarget(int[][] matrix, int target) {
-        //1. Ã¶¾ÙËùÓĞµÄÉÏÏÂ±ß½ç
+        //1. æšä¸¾æ‰€æœ‰çš„ä¸Šä¸‹è¾¹ç•Œ
         int row = matrix.length;
         int col = matrix[0].length;
         int ans = 0;
         for(int top = 0; top < row; top++){
             int[] sum = new int[col];
             for(int bottom = top; bottom < row; bottom++){
-                //  1.1 ½«ÉÏÏÂ±ß½ç×ª³ÉÒ»Î¬Êı×é
+                //  1.1 å°†ä¸Šä¸‹è¾¹ç•Œè½¬æˆä¸€ç»´æ•°ç»„
                 for(int i = 0; i < col; i++){
                     sum[i] += matrix[bottom][i];
                     // System.out.print(sum[i] + " ");
                 }
-                //  1.2 ¼ÆËãÄ¿±ê×Ó¾ØÕó¸öÊı
+                //  1.2 è®¡ç®—ç›®æ ‡å­çŸ©é˜µä¸ªæ•°
                 ans += numSubsectionSumTarget(sum, target);
             }
         }
@@ -34,13 +34,13 @@ public class Submatrix {
     
     /** the num of the Subsection which is equal to target*/
     public int numSubsectionSumTarget(int[] sum, int target){
-        //  1. ¶ÔÒ»Î¬Êı×é½øĞĞÇ°×ººÍ¼ÆËã£¬ÓÃMap[preSum,count]´æ´¢ËùÓĞµÄÇ°×ººÍ
+        //  1. å¯¹ä¸€ç»´æ•°ç»„è¿›è¡Œå‰ç¼€å’Œè®¡ç®—ï¼Œç”¨Map[preSum,count]å­˜å‚¨æ‰€æœ‰çš„å‰ç¼€å’Œ
         int preSum = 0;
         HashMap<Integer, Integer> map = new HashMap();
-        //      ¼ÓÈëÒ»¸öÇ°×ººÍÎª0µÄ<key,value>, value=1
+        //      åŠ å…¥ä¸€ä¸ªå‰ç¼€å’Œä¸º0çš„<key,value>, value=1
         map.put(0,1);
         int ans = 0;
-        //  2. Ã¿ĞÂÉú³ÉÒ»¸öÇ°×ººÍnewPreSum£¬²éÕÒÊÇ·ñÓĞÒ»¸öOldSum£¬Âú×ã£ºOldSum = k - newPreSum£¬Âú×ãÔò½øĞĞÍ³¼Æ¸öÊıµÄÀÛ¼Ó
+        //  2. æ¯æ–°ç”Ÿæˆä¸€ä¸ªå‰ç¼€å’ŒnewPreSumï¼ŒæŸ¥æ‰¾æ˜¯å¦æœ‰ä¸€ä¸ªOldSumï¼Œæ»¡è¶³ï¼šOldSum = k - newPreSumï¼Œæ»¡è¶³åˆ™è¿›è¡Œç»Ÿè®¡ä¸ªæ•°çš„ç´¯åŠ 
         for(int item:sum){
             preSum += item;
             int oldPreSum = preSum - target;

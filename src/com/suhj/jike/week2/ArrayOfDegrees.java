@@ -8,16 +8,16 @@ import java.util.Stack;
 
 /**
  * @author Haojie
- * 697. Êı×éµÄ¶È
+ * 697. æ•°ç»„çš„åº¦
  */
 public class ArrayOfDegrees {
     public int findShortestSubArray(int[] nums) {
         HashMap<Integer, Stack<Integer>> elementDegreeMap = new HashMap<>();
         Stack<Integer> stack = new Stack();
         int currentDegree;
-        //1. ±éÀúÊı×éÖĞµÄÔªËØ£¬½«×î´ó¶ÈµÄÔªËØÕ»
+        //1. éå†æ•°ç»„ä¸­çš„å…ƒç´ ï¼Œå°†æœ€å¤§åº¦çš„å…ƒç´ æ ˆ
         for(int i = 0; i < nums.length; i++){
-            //  1.1 ¼ÆËãÔªËØµÄ¶È£¬±£´æÆäË÷ÒıÖµ
+            //  1.1 è®¡ç®—å…ƒç´ çš„åº¦ï¼Œä¿å­˜å…¶ç´¢å¼•å€¼
             if(!elementDegreeMap.containsKey(nums[i])){
                 Stack<Integer> indexVector = new Stack();
                 elementDegreeMap.put(nums[i], indexVector);
@@ -25,19 +25,19 @@ public class ArrayOfDegrees {
             elementDegreeMap.get(nums[i]).push(i);
             currentDegree = elementDegreeMap.get(nums[i]).size();
 
-            //  1.2 ³öÕ»£ºĞ¡µÄ¶ÈµÄË÷Òı »òÕßÊÇ Óöµ½ÏàÍ¬ÔªËØµÄ£¬½«Õ»¶¥µÄ³öÕ»
+            //  1.2 å‡ºæ ˆï¼šå°çš„åº¦çš„ç´¢å¼• æˆ–è€…æ˜¯ é‡åˆ°ç›¸åŒå…ƒç´ çš„ï¼Œå°†æ ˆé¡¶çš„å‡ºæ ˆ
             while( !stack.empty() && (elementDegreeMap.get(stack.peek()).size() < currentDegree || stack.peek() == nums[i])){
                 stack.pop();
             }
 
-            //  1.3 ÈëÕ»£ºµÚÒ»ÖÖÇé¿ö£¬´ËÊ±Õ»Îª¿Õ£¬µ±Ç°¶È×î´ó£»µÚ¶şÖÖÇé¿ö£¬µ±Ç°¶ÈÓëÕ»¶¥¶ÈÏàµ±
-            //      Ğ¡ÓÚµ±Ç°Õ»¶¥µÄÔòÌø¹ı
+            //  1.3 å…¥æ ˆï¼šç¬¬ä¸€ç§æƒ…å†µï¼Œæ­¤æ—¶æ ˆä¸ºç©ºï¼Œå½“å‰åº¦æœ€å¤§ï¼›ç¬¬äºŒç§æƒ…å†µï¼Œå½“å‰åº¦ä¸æ ˆé¡¶åº¦ç›¸å½“
+            //      å°äºå½“å‰æ ˆé¡¶çš„åˆ™è·³è¿‡
             if(stack.empty() || elementDegreeMap.get(stack.peek()).size() == currentDegree){
                 stack.push(nums[i]);
             }
         }
 
-        //2. ±éÀúÕ»£¬¼ÆËã×î´ó¶È×î¶Ì×ÓÊı×é
+        //2. éå†æ ˆï¼Œè®¡ç®—æœ€å¤§åº¦æœ€çŸ­å­æ•°ç»„
         int minDegree = 50_001;
         for(Integer item:stack){
             minDegree = Math.min(minDegree, elementDegreeMap.get(item).peek() - elementDegreeMap.get(item).get(0) + 1);

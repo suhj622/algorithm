@@ -10,22 +10,22 @@ import java.util.Set;
 
 /**
  * @author Haojie
- * 811. ×ÓÓòÃû·ÃÎÊ¼ÆÊı
+ * 811. å­åŸŸåè®¿é—®è®¡æ•°
  */
 public class SubdomainAccessCounts {
     public List<String> subdomainVisits(String[] cpdomains) {
 
         HashMap<String, Integer> domainMap = new HashMap<>();
-        //1. ±éÀú×Ö·û´®Êı×é
+        //1. éå†å­—ç¬¦ä¸²æ•°ç»„
         String subdomain = null;
         String[] elements = null;
         for(String cpdomain:cpdomains){
-            //1.1 ¶ÔÃ¿Ò»¸öÔªËØ°´¿Õ¸ñÇĞ¸î£¬µÚÒ»¸öÔªËØÊÇ·ÃÎÊ´ÎÊı£¬µÚ¶ş¸öÔªËØÊÇÍøÖ·ÓòÃû
+            //1.1 å¯¹æ¯ä¸€ä¸ªå…ƒç´ æŒ‰ç©ºæ ¼åˆ‡å‰²ï¼Œç¬¬ä¸€ä¸ªå…ƒç´ æ˜¯è®¿é—®æ¬¡æ•°ï¼Œç¬¬äºŒä¸ªå…ƒç´ æ˜¯ç½‘å€åŸŸå
             elements = cpdomain.split(" ");
             addToHashMap(domainMap, elements[1], Integer.valueOf(elements[0]));
-            //1.2 ¶ÔÍøÕ¾ÓòÃû°´dotºÅ½øĞĞÇĞ¸î£¬·µ»ØÒ»¸ö×Ö·ûÊı×é
+            //1.2 å¯¹ç½‘ç«™åŸŸåæŒ‰dotå·è¿›è¡Œåˆ‡å‰²ï¼Œè¿”å›ä¸€ä¸ªå­—ç¬¦æ•°ç»„
             String[] subdomains = elements[1].split("\\.");
-            //1.3 ´Ó×îºóÒ»¸öÔªËØ±éÀúµ½µÚ¶ş¸öÔªËØ£¬Æ´½Ó×ÓÓòÃû
+            //1.3 ä»æœ€åä¸€ä¸ªå…ƒç´ éå†åˆ°ç¬¬äºŒä¸ªå…ƒç´ ï¼Œæ‹¼æ¥å­åŸŸå
             subdomain = "";
             for(int i = subdomains.length - 1 ; i > 0; i--){
                 if(subdomain.length() > 0){
@@ -37,7 +37,7 @@ public class SubdomainAccessCounts {
             }
         }
 
-        //2. ·µ»ØÆ´½Ó½á¹û
+        //2. è¿”å›æ‹¼æ¥ç»“æœ
         return mapToList(domainMap);
     }
 
