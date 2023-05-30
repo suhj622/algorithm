@@ -5,7 +5,7 @@ package com.suhj.jike.week4;
 
 /**
  * @author Haojie
- * 把二叉搜索树转换为累加树
+ * 鎶婁簩鍙夋悳绱㈡爲杞崲涓虹疮鍔犳爲
  */
 public class BinaryTreeToAccumulatedTree {
 	/**
@@ -24,7 +24,7 @@ public class BinaryTreeToAccumulatedTree {
 	 * }
 	 */
 /**
-解法1：按右中左进行深度遍历，每次返回进行节点数值的累加
+瑙ｆ硶1锛氭寜鍙充腑宸﹁繘琛屾繁搴﹂亶鍘嗭紝姣忔杩斿洖杩涜鑺傜偣鏁板�肩殑绱姞
 */
     private int sum = 0;
     public TreeNode convertBST(TreeNode root) {

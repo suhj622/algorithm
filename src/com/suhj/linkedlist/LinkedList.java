@@ -5,30 +5,30 @@ package com.suhj.linkedlist;
 
 /**
  * @author Haojie
- * µ¥Á´±í£¬V ±íÊ¾´«ÈëµÄÀàĞÍ
+ * å•é“¾è¡¨ï¼ŒV è¡¨ç¤ºä¼ å…¥çš„ç±»å‹
  */
 public class LinkedList<V> {
 	
-	//ÊôĞÔ£ºÍ·Ö¸Õë¡¢Î²Ö¸Õë¡¢½Úµã¸öÊı
-	//Í·Ö¸ÕëÓëÎ²Ö¸Õë¶¼ÊÇÖ¸Ïò½ÚµãµÄÒıÓÃ
+	//å±æ€§ï¼šå¤´æŒ‡é’ˆã€å°¾æŒ‡é’ˆã€èŠ‚ç‚¹ä¸ªæ•°
+	//å¤´æŒ‡é’ˆä¸å°¾æŒ‡é’ˆéƒ½æ˜¯æŒ‡å‘èŠ‚ç‚¹çš„å¼•ç”¨
 	private Node head;
 	private Node tail;
 	private int size;
 	
-	//ÄÚ²¿·â×°Ò»¸ö½ÚµãÀà
-	//ÓµÓĞÊôĞÔ£ºÖµÓënextÖ¸Õë
+	//å†…éƒ¨å°è£…ä¸€ä¸ªèŠ‚ç‚¹ç±»
+	//æ‹¥æœ‰å±æ€§ï¼šå€¼ä¸nextæŒ‡é’ˆ
 	public class Node{
 		public V value;
 		public Node next;
 		public Node(V value) {
 			this.value = value;
-			//nextÔÚÁ´±í²Ù×÷Ê±²ÅÄÜÈ·¶¨
+			//nextåœ¨é“¾è¡¨æ“ä½œæ—¶æ‰èƒ½ç¡®å®š
 			this.next = null; 
 		}
 	}
 	
 	/**
-	 * ³õÊ¼»¯µ¥Á´±í£¬´ËÊ±ÖµÓëÖ¸Õë¾ùÎªnull
+	 * åˆå§‹åŒ–å•é“¾è¡¨ï¼Œæ­¤æ—¶å€¼ä¸æŒ‡é’ˆå‡ä¸ºnull
 	 */
 	public LinkedList() {
 		head = null;
@@ -53,7 +53,7 @@ public class LinkedList<V> {
 	}
 	
 	/**
-	 * Õ¹Ê¾Á´±íµÄËùÓĞÔªËØ
+	 * å±•ç¤ºé“¾è¡¨çš„æ‰€æœ‰å…ƒç´ 
 	 */
 	private void show() {
 		Node index = head;
@@ -66,7 +66,7 @@ public class LinkedList<V> {
 	
 
 	/**
-	 * ²âÊÔ
+	 * æµ‹è¯•
 	 * @param args
 	 */
 	public static void main(String[] args) {

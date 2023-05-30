@@ -9,7 +9,7 @@ import java.util.Stack;
 
 /**
  * @author Haojie
- * ±»Î§ÈÆµÄÇøÓò
+ * è¢«å›´ç»•çš„åŒºåŸŸ
  */
 public class SourroundedArea {
     boolean[][] used;
@@ -26,15 +26,15 @@ public class SourroundedArea {
         this.board = board;
         used = new boolean[this.length][this.width];
 
-        //1. É¨Ãèboard
+        //1. æ‰«æboard
         for(int m = 0; m < this.length; m++){
             for(int n = 0; n < this.width; n++){
-                //2. ±éÀú¹ıµÄµã¼ÇÂ¼Îªtrue£¬ÇÒµÚÒ»´ÎÓöµ½µÄO²éÕÒÁ¬Í¨¿é
+                //2. éå†è¿‡çš„ç‚¹è®°å½•ä¸ºtrueï¼Œä¸”ç¬¬ä¸€æ¬¡é‡åˆ°çš„OæŸ¥æ‰¾è¿é€šå—
                 if(!used[m][n] ){
                     used[m][n] = true;
                     if(this.board[m][n] == 'O'){
                         bfs(m, n);
-                        //3. ½«ÕÒµ½µÄÁ¬Í¨¿éÉèÖÃÎªX
+                        //3. å°†æ‰¾åˆ°çš„è¿é€šå—è®¾ç½®ä¸ºX
                         setX();
                     }
                 } 
@@ -50,13 +50,13 @@ public class SourroundedArea {
             if(pair.x == 0 || pair.x == this.length - 1 || pair.y == 0 || pair.y == this.width - 1){
                 isValid = false;
                 break;
-                //if(pair.x == 1 && pair.y == 1) System.out.println("´íÁË");
+                //if(pair.x == 1 && pair.y == 1) System.out.println("é”™äº†");
             }
             
-            //if(pair.x == 1 && pair.y == 1) System.out.println("ÕÒµ½ÁË");
+            //if(pair.x == 1 && pair.y == 1) System.out.println("æ‰¾åˆ°äº†");
         }
 
-        //ÊÇ°üÎ§µÄÁªÍ¨¿é£¬ÉèÖÃÎªX£»·ñÔòÇå¿ÕÁĞ±í
+        //æ˜¯åŒ…å›´çš„è”é€šå—ï¼Œè®¾ç½®ä¸ºXï¼›å¦åˆ™æ¸…ç©ºåˆ—è¡¨
         if(isValid){
             while(!area.isEmpty()){
                 Pair pair = area.pop();

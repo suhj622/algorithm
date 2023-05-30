@@ -5,7 +5,7 @@ package com.suhj.linkedlist;
 
 /**
  * @author Haojie
- * Ë«ÏòÁ´±í
+ * Ë«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public class DoublyLinkedList {
 

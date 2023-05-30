@@ -6,12 +6,12 @@ package com.suhj.sort;
 /**
  * @author Haojie
  * 
- * ÅÅĞòÀà
+ * æ’åºç±»
  */
 public class Sort {
 	
 	/**
-	 * ¶ÔÕûÊıÊı×é½øĞĞÑ¡ÔñÅÅĞò
+	 * å¯¹æ•´æ•°æ•°ç»„è¿›è¡Œé€‰æ‹©æ’åº
 	 * @param arr
 	 */
 	public static void SelectSort(int[] arr) {
@@ -20,7 +20,7 @@ public class Sort {
 		//2   2--N-1
 		//......
 		//N-2 N-2--N-1
-		//N-1 Ö»Ê£Ò»¸öÔªËØ£¬²»ĞèÒªÕÒ³ö×îĞ¡µÄÔªËØ		
+		//N-1 åªå‰©ä¸€ä¸ªå…ƒç´ ï¼Œä¸éœ€è¦æ‰¾å‡ºæœ€å°çš„å…ƒç´ 		
 		int end = arr.length - 1;
 		for(int i = 0; i < end ; i ++ ) {
 			int minPos = i;
@@ -32,10 +32,10 @@ public class Sort {
 	}
 
 	/**
-	 * »¥»»Êı×éÖĞÁ½¸öÔªËØµÄÎ»ÖÃ
-	 * @param arr  Êı×é
-	 * @param i    ÔªËØË÷Òı1
-	 * @param minPos ÔªËØË÷Òı2
+	 * äº’æ¢æ•°ç»„ä¸­ä¸¤ä¸ªå…ƒç´ çš„ä½ç½®
+	 * @param arr  æ•°ç»„
+	 * @param i    å…ƒç´ ç´¢å¼•1
+	 * @param minPos å…ƒç´ ç´¢å¼•2
 	 */
 	private static void swap(int[] arr, int i, int j) {
 		int temp = arr[i];
@@ -44,7 +44,7 @@ public class Sort {
 	}
 	
 	/**
-	 * ²âÊÔ·½·¨
+	 * æµ‹è¯•æ–¹æ³•
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -56,7 +56,7 @@ public class Sort {
 	}
 	
 	/**
-	 * ¸´ÖÆÊı×éµÄ·½·¨
+	 * å¤åˆ¶æ•°ç»„çš„æ–¹æ³•
 	 * @param arr
 	 * @return
 	 */
@@ -70,7 +70,7 @@ public class Sort {
 	}
 
 	/**
-	 * ´òÓ¡·½·¨
+	 * æ‰“å°æ–¹æ³•
 	 * @param arr
 	 */
 	private static void print(int[] arr) {

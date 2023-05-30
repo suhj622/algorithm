@@ -8,11 +8,11 @@ import java.util.List;
 
 /**
  * @author Haojie
- * 解题思路：
- * 1. 对于 f[m][n],
-    如果 n = 0, 则 f[m][n] = f[m - 1][n] + triangle[m][n]
-    如果 m > 0，则 f[m][n] = min(f[m-1][n] + triangle[m][n], f[m-1][n-1] + triangle[m][n]);
-    如果 n == n，则 f[m][n] = f[m-1][n-1] + triangle[m][n]
+ * ?????·??
+ * 1. ???? f[m][n],
+    ??? n = 0, ?? f[m][n] = f[m - 1][n] + triangle[m][n]
+    ??? m > 0???? f[m][n] = min(f[m-1][n] + triangle[m][n], f[m-1][n-1] + triangle[m][n]);
+    ??? n == n???? f[m][n] = f[m-1][n-1] + triangle[m][n]
  */
 public class MinimumTotal {
 	

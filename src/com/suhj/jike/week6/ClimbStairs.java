@@ -5,8 +5,8 @@ package com.suhj.jike.week6;
 
 /**
  * @author Haojie
- * ½âÌâË¼Â·£º
- * ¿ÉÒÔ·Ö½âÎªµ½´ïµÚn½×£¬ÄÜÓÐ¶àÉÙÖÖ×ß·¨£¬×îºóÒ»²½¿ÉÄÜ×ßÒ»²½»òÁ½²½
+ * è§£é¢˜æ€è·¯ï¼š
+ * å¯ä»¥åˆ†è§£ä¸ºåˆ°è¾¾ç¬¬né˜¶ï¼Œèƒ½æœ‰å¤šå°‘ç§èµ°æ³•ï¼Œæœ€åŽä¸€æ­¥å¯èƒ½èµ°ä¸€æ­¥æˆ–ä¸¤æ­¥
  * f(n) = + f(n - 1) + f(n - 2)
  */
 

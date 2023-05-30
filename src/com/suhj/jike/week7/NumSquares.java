@@ -6,18 +6,18 @@ package com.suhj.jike.week7;
 import java.util.Arrays;
 
 /**
-½âÌâË¼Â·£º
-f[n] ±íÊ¾ÄÜ×é³ÉºÍÎªnµÄÍêÈ«Æ½·½ÊýµÄ×îÉÙÊýÁ¿
-Ã¶¾Ù i [1...... sqrt(n) ] 
-¶ÔÓÚ j (j>=i^2, j<=n)£¬f[j] = min(f[j], f[j-i^2] + 1)
-·µ»Ø f[n]
-(¸ÃÌâÄ¿Ò»¶¨ÓÐ´ð°¸£¬ÆðÂëÓÐn¸ö1×÷Îª±£µ×´ð°¸)
+è§£é¢˜æ€è·¯ï¼š
+f[n] è¡¨ç¤ºèƒ½ç»„æˆå’Œä¸ºnçš„å®Œå…¨å¹³æ–¹æ•°çš„æœ€å°‘æ•°é‡
+æžšä¸¾ i [1...... sqrt(n) ] 
+å¯¹äºŽ j (j>=i^2, j<=n)ï¼Œf[j] = min(f[j], f[j-i^2] + 1)
+è¿”å›ž f[n]
+(è¯¥é¢˜ç›®ä¸€å®šæœ‰ç­”æ¡ˆï¼Œèµ·ç æœ‰nä¸ª1ä½œä¸ºä¿åº•ç­”æ¡ˆ)
  */
 public class NumSquares {
     public int numSquares(int n) {
         int[] f = new int[n+1];
         Arrays.fill(f, 10_000_000);
-        //f[0] Îª±ß½ç
+        //f[0] ä¸ºè¾¹ç•Œ
         f[0] = 0;
         int up = (int)Math.sqrt(n);
         for(int i = 1; i <= up; i++)

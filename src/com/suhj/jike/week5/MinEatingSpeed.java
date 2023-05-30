@@ -1,12 +1,12 @@
 package com.suhj.jike.week5;
 /**
- * °®³ÔÏã½¶µÄçæçæ
+ * çˆ±åƒé¦™è•‰çš„ç‚ç‚
  * @author Haojie
  *
  */
 public class MinEatingSpeed {
 /**
-¶ş·ÖË¼Ïë
+äºŒåˆ†æ€æƒ³
 */	
     public int minEatingSpeed(int[] piles, int h) {
         

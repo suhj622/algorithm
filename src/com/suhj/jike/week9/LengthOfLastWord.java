@@ -5,14 +5,14 @@ package com.suhj.jike.week9;
 
 /**
  * @author Haojie
- * ¸øÄãÒ»¸ö×Ö·û´® s£¬ÓÉÈô¸Éµ¥´Ê×é³É£¬µ¥´ÊÇ°ºóÓÃÒ»Ð©¿Õ¸ñ×Ö·û¸ô¿ª¡£·µ»Ø×Ö·û´®ÖÐ ×îºóÒ»¸ö µ¥´ÊµÄ³¤¶È¡£
- * µ¥´Ê ÊÇÖ¸½öÓÉ×ÖÄ¸×é³É¡¢²»°üº¬ÈÎºÎ¿Õ¸ñ×Ö·ûµÄ×î´ó×Ó×Ö·û´®
+ * ç»™ä½ ä¸€ä¸ªå­—ç¬¦ä¸² sï¼Œç”±è‹¥å¹²å•è¯ç»„æˆï¼Œå•è¯å‰åŽç”¨ä¸€äº›ç©ºæ ¼å­—ç¬¦éš”å¼€ã€‚è¿”å›žå­—ç¬¦ä¸²ä¸­ æœ€åŽä¸€ä¸ª å•è¯çš„é•¿åº¦ã€‚
+ * å•è¯ æ˜¯æŒ‡ä»…ç”±å­—æ¯ç»„æˆã€ä¸åŒ…å«ä»»ä½•ç©ºæ ¼å­—ç¬¦çš„æœ€å¤§å­å­—ç¬¦ä¸²
  */
 public class LengthOfLastWord {
 	/**
 	s = "   fly me   to   the moon  "
-	½âÌâË¼Â·£º
-	1. ¶Ô¸Ã×Ö·û´®½øÐÐ·´Ïò±éÀú£¬´ÓÓöµ½µÄµÚÒ»¸ö×ÖÄ¸¿ªÊ¼¼ÆÊý£¬ÖÐ¼ä³öÏÖ·Ç×ÖÄ¸ÍË³ö
+	è§£é¢˜æ€è·¯ï¼š
+	1. å¯¹è¯¥å­—ç¬¦ä¸²è¿›è¡Œåå‘éåŽ†ï¼Œä»Žé‡åˆ°çš„ç¬¬ä¸€ä¸ªå­—æ¯å¼€å§‹è®¡æ•°ï¼Œä¸­é—´å‡ºçŽ°éžå­—æ¯é€€å‡º
 	 */
     public int lengthOfLastWord(String s) {
         int ans = 0;

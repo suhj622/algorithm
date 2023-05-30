@@ -10,14 +10,14 @@ import java.util.Stack;
 
 /**
  * @author Haojie
- *  È«ÅÅÁĞ II
+ *  å…¨æ’åˆ— II
  */
 public class PermuteUnique {
 	// 1    1   2
-	//µÚÒ»¸öÑ¡1  1, 2     2,1
-	//µÚ¶ş¸öÑ¡1  Ìø¹ı
-	//µÚÈı¸öÑ¡2  1,1      Ìø¹ı
-	//°ÑÎÊÌâ¼ò»¯ÎªµÚi¸öÑ¡µÚj¸öµÄÎÊÌâ
+	//ç¬¬ä¸€ä¸ªé€‰1  1, 2     2,1
+	//ç¬¬äºŒä¸ªé€‰1  è·³è¿‡
+	//ç¬¬ä¸‰ä¸ªé€‰2  1,1      è·³è¿‡
+	//æŠŠé—®é¢˜ç®€åŒ–ä¸ºç¬¬iä¸ªé€‰ç¬¬jä¸ªçš„é—®é¢˜
 
 
 	    private boolean[] used;
@@ -30,7 +30,7 @@ public class PermuteUnique {
 	        this.nums = nums;
 	        this.length = nums.length;
 	        used = new boolean[this.length];
-	        //¶ÔÊı×é×öÅÅĞò
+	        //å¯¹æ•°ç»„åšæ’åº
 	        Arrays.sort(nums);
 	        choseAndCombine();
 	        return ans;
@@ -44,7 +44,7 @@ public class PermuteUnique {
 
 	        int lastChose = -11;
 	        for(int i = 0; i < this.length; i++){
-	            //Õâ´ÎÑ¡µÄÊı¸úÉÏ´ÎÑ¡µÄÒ»Ñù´ó£¬Ìø¹ı
+	            //è¿™æ¬¡é€‰çš„æ•°è·Ÿä¸Šæ¬¡é€‰çš„ä¸€æ ·å¤§ï¼Œè·³è¿‡
 	            if(!used[i]){
 	                if(nums[i] == lastChose){
 	                    continue;

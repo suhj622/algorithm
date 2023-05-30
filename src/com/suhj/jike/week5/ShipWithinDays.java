@@ -4,13 +4,13 @@
 package com.suhj.jike.week5;
 
 /**
- * ÔÚ D ÌìÄÚËÍ´ï°ü¹üµÄÄÜÁ¦
+ * ğğ D ğğğğğ?ğğğğğğğğğğ
  * @author Haojie
  *
  */
 public class ShipWithinDays {
 /**
-½âÌâË¼Â·£º´Ó´¬µÄÔËÔØÁ¿µÄ½Ç¶È£¬ÀûÓÃ¶ş·ÖµÄË¼Ïë£¬ÕÒµ½Ò»¸öÄÜÔÚdaysÌìÄÚÔËÊäÍêËùÓĞ°ü¹üµÄ×îµÍÔËÔØÁ¿
+ğğğğ?·ğğğ?ğğğğğğğğğğ???ğğğğöğğ?ğ?ğ?ğ?ğ?ğğğğğğdaysğğğğğğğğğğğğğ?ğğğğğğğğğğğğğğ
 */
     public int shipWithinDays(int[] weights, int days) {
         int min = weights[0];
@@ -30,7 +30,7 @@ public class ShipWithinDays {
                     transport = weights[i];
                     count ++;
                 }
-                //ÌìÊı³¬¹ıÁ¢¼´ÍË³ö
+                //ğğğğğğğğğğğğğ?ğ
                 if( count > days){
                     break;
                 }

@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 
  * @author Haojie
- * ºÏ²¢K¸öÉıĞòÁ´±í
+ * åˆå¹¶Kä¸ªå‡åºé“¾è¡¨
  */
 public class MergeKLists {
     public ListNode mergeKLists(ListNode[] lists) {

@@ -11,7 +11,7 @@ import java.util.Stack;
 
 /**
  * @author Haojie
- * ¿Î³Ì±í II
+ * è¯¾ç¨‹è¡¨ II
  */
 public class ClassSchedule {
     List<Stack<Integer>> toCourse = new ArrayList<>();
@@ -21,11 +21,11 @@ public class ClassSchedule {
     Queue<Integer> learningQue;
 
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-        //1. ³ö±ßÊý×é
+        //1. å‡ºè¾¹æ•°ç»„
         for(int i = 0; i < numCourses ; i++){
             toCourse.add(new Stack<>());
         }
-        //Çó¶ÔÓ¦µÄÈë¶ÈÊý
+        //æ±‚å¯¹åº”çš„å…¥åº¦æ•°
         inDepth = new int[numCourses];
         for(int i = 0; i < prerequisites.length; i++){
             int x = prerequisites[i][0];
@@ -34,7 +34,7 @@ public class ClassSchedule {
             inDepth[x] ++;
         }
         
-        //3. ´ÓÈë¶ÈÎª0µÄ¿Î³Ì¿ªÊ¼±éÀú
+        //3. ä»Žå…¥åº¦ä¸º0çš„è¯¾ç¨‹å¼€å§‹éåŽ†
         learningQue = new LinkedList<>();
         for(int i = 0; i < numCourses; i++){
             if(inDepth[i] == 0){
@@ -46,7 +46,7 @@ public class ClassSchedule {
         finishNum = -1;        
         bfs();
 
-        //4. ÄÜ·ñÍê³ÉËùÓÐ¿Î³Ì
+        //4. èƒ½å¦å®Œæˆæ‰€æœ‰è¯¾ç¨‹
         //System.out.println(canFinishList);
 
         if((finishNum + 1) == numCourses){
@@ -56,7 +56,7 @@ public class ClassSchedule {
         }
     }
     private void bfs(){
-        //Ñ§Ï°µ±Ç°¿Î³Ì
+        //å­¦ä¹ å½“å‰è¯¾ç¨‹
         while(!learningQue.isEmpty()){
             int course = learningQue.remove();
             finishNum ++;
